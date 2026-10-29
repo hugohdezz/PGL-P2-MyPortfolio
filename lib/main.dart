@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'theme/app_theme.dart';
-import 'screens/welcome_screen.dart';
+import 'router/app_router.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,11 +12,11 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'Canary Dates',
-      theme: AppTheme.lightTheme,
       debugShowCheckedModeBanner: false,
-      home: const WelcomeScreen(),
+      theme: AppTheme.lightTheme,
+      routerConfig: AppRouter.router,
     );
   }
 }
